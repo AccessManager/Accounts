@@ -26,7 +26,9 @@
                         {{$i++}}
                     </td>
                     <td>
-                        {{$account->username}}
+                        <a href="{{route('account.details', $account->username)}}">
+                            {{$account->username}}
+                        </a>
                     </td>
                     <td>
                         {{$account->name}}
