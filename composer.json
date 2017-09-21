@@ -10,7 +10,7 @@
   },
   "autoload": {
     "psr-4": {
-      "AccessManager\\Setup\\": "src"
+      "AccessManager\\Accounts\\": "src"
     }
   },
   "config": {
