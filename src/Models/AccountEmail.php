@@ -5,9 +5,8 @@ namespace AccessManager\Accounts\Models;
 
 use AccessManager\Base\Models\AdminBaseModel;
 
-class Phone extends AdminBaseModel
+class AccountEmail extends AdminBaseModel
 {
-    protected $table = 'account_phones';
-    protected $fillable = ['number', 'account_id'];
+    protected $fillable = ['address', 'account_id'];
     public $timestamps = false;
 }
