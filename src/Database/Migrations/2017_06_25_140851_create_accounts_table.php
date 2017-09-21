@@ -18,9 +18,15 @@ class CreateAccountsTable extends Migration
             $table->increments('id');
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('name');
-            $table->string('address');
+            $table->string('fname');
+            $table->string('lname')->nullable();
+            $table->string('address')->nullable();
+            $table->unsignedInteger('zone_id');
             $table->timestamps();
+
+            $table->foreign('zone_id')
+                ->references('id')->on('zones')
+                ->onDelete('cascade');
         });
 
         Schema::create('account_phones', function(Blueprint $table){
