@@ -3,6 +3,7 @@
 Route::group([
     'namespace'     =>      'AccessManager\Accounts\Http\Controllers',
     'prefix'        =>      'accounts',
+    'middleware'    =>      'auth',
 ], function(){
 
     Route::get('/', [
@@ -11,7 +12,7 @@ Route::group([
     ]);
 
     Route::get('/new', [
-        'as'    =>      'accounts.add.get',
+        'as'    =>      'accounts.add',
         'uses'  =>      'AccountsController@getAdd',
     ]);
 
@@ -21,7 +22,7 @@ Route::group([
     ]);
 
     Route::get('{username}/modify', [
-        'as'    =>      'accounts.edit.get',
+        'as'    =>      'accounts.edit',
         'uses'  =>      'AccountsController@getEdit',
     ]);
 
@@ -31,7 +32,7 @@ Route::group([
     ]);
 
     Route::post('{username}/remove', [
-        'as'    =>      'accounts.delete.post',
+        'as'    =>      'accounts.delete',
         'uses'  =>      'AccountsController@postDelete',
     ]);
 });
