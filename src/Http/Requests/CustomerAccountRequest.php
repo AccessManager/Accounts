@@ -17,7 +17,7 @@ class CustomerAccountRequest extends BaseFormRequest
         return [
             'username'  =>  ['required', 'unique:accounts',],
             'password'  =>  ['required',],
-            'name'      =>  ['required', ],
+            'fname'      =>  ['required', ],
         ];
     }
 }
