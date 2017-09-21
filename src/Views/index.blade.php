@@ -31,7 +31,19 @@
                         </a>
                     </td>
                     <td>
-                        {{$account->name}}
+                        {{$account->fname}} {{$account->lname}}
+                    </td>
+                    <td>
+                        {!! Form::open(['route'=>['accounts.delete', $account->username], 'onsubmit'=>'confirm("Are you sure?")']) !!}
+                        <div class="btn-group btn-group-xs">
+                            <a href="{{route('accounts.edit', $account->username)}}" class="btn btn-default btn-flat">
+                                modify
+                            </a>
+                            <button class="btn btn-danger btn-flat">
+                                remove
+                            </button>
+                        </div>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
                 @empty
