@@ -62,5 +62,5 @@
             @endforelse
         </tbody>
     </table>
-    {!! $accounts->links() !!}
+    {!! $accounts->appends(request()->query())->links() !!}
 @endsection
