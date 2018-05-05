@@ -24,7 +24,15 @@ class AccountsController extends AdminBaseController
      */
     public function getIndex()
     {
-        $accounts = Account::paginate(10);
+        $query = Account::orderby('username');
+
+        $search = request('q', null);
+        if( $search )
+        {
+            $query->where('username', 'LIKE', "%$search%");
+        }
+
+        $accounts = $query->paginate(10);
         return view('Accounts::index', compact('accounts'));
     }
 

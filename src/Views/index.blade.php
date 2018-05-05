@@ -1,5 +1,12 @@
 @extends("Base::layout")
 
+@section('box-header-navbar')
+    @include('Accounts::partials.searchbar', [
+                'advancedSearchUrl' =>  '',
+                'cancelSearchUrl'   =>  route('accounts.index'),
+            ])
+@endsection
+
 @section("content")
     <table class=" table table-hover table-responsive">
         <thead>
